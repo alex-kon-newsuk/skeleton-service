@@ -1,0 +1,15 @@
+{
+  "name": "sekeleton-service",
+  "version": "0.0.1",
+  "description": "Sample node.js service ",
+  "main": "app.js",
+  "author": "News UK",
+  "license": "?",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {}
+}
