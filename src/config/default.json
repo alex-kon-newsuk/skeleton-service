@@ -1,0 +1,7 @@
+{
+  "CAPI" : {
+    "basepath" : "http://cdn.newsapi.com.au/",
+    "version" : "v1",
+    "apikey" : "4nu8ewg73b2gsf79aqx3cutu"
+  }
+}
