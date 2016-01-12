@@ -6,7 +6,7 @@ var basepath = config.get('CAPI.basepath');
 var version = config.get('CAPI.version');
 var apikey = config.get('CAPI.apikey');
 
-module.exports.get = function (request, response, next, callback) {
+module.exports.getContentById = function (request, response, next, callback) {
 
     return new Promise(function (resolve, reject) {
 

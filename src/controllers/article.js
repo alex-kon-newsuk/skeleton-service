@@ -1,7 +1,7 @@
 var requestService = require('../services/requestService');
 
-module.exports.get = function (request, response, next) {
-    requestService.get(request, response, next).then(parseRequest);
+module.exports.getSingleArticle = function (request, response, next) {
+    requestService.getContentById(request, response, next).then(parseRequest);
  };
 
 function parseRequest (data) {
