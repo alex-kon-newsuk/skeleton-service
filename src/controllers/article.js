@@ -7,7 +7,7 @@ module.exports.get = function (request, response, next) {
 function parseRequest (data) {
     var processedData = processResponseData (data.body);
     data.response.setHeader('Content-Type', 'application/json');
-    data.response.send(data);
+    data.response.send(processedData);
 }
 
 function processResponseData (data) {
