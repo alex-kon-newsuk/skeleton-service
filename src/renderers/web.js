@@ -1,4 +1,4 @@
 module.exports.parseAndDisplay = function(data){
-    data.response.setHeader('Content-Type', 'application/json');
-    data.response.send(data.body);
+    var content = JSON.parse(data.body)
+    data.response.render('web',{content:content.body});
 }
