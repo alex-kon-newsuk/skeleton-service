@@ -1,0 +1,72 @@
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+        <channel>
+            <title>
+            </title>
+            <link>
+            </link>
+            <descrption>
+            </descrption>
+            <language>
+            </language>
+            {{#each articles}}
+                <item>
+                    <title>
+                        {{this.title}}
+                    </title>
+                    <link>
+                        {{{this.link}}}
+                    </link>
+                    <guid>
+                        {{this.id}}
+                    </guid>
+                    <pubDate>
+                        {{this.pubDate}}
+                    </pubDate>
+                    <author>
+                        {{#each authors}}
+                            {{this}}
+                        {{/each}}
+                    </author>
+                    <description>
+                        {{this.description}}
+                    </description>
+                    <content:encoded>
+                        <![CDATA[
+                            <!doctype html>
+                            <html lang="en" prefix="op: http://media.facebook.com/op#">
+                            <head>
+                                <meta charset="utf-8">
+                                <link rel="canonical" href="canonical url">
+                                <meta property="op:markup_version" content="v1.0">
+                            </head>
+                            <body>
+                                <article>
+                                    <header>
+                                        <h1>{{this.title}}</h1>
+                                        <h2>{{this.subtitle}}</h2>
+                                        <time class="op-published" datetime={{this.timeStampPublished}}>{{this.dateAndTimePublished}}</time>
+                                        <time class="op-modified" datetime={{this.timeStampUpdated}}>{{this.dateAndTimeUpdated}}</time>
+                                        <address><a>By EMMA GRITT</a></address>
+                                        <figure>
+                                            <img src="{{this.figureImage}}" />
+                                            <figcaption>Syco / Thames / Corbis</figcaption>
+                                        </figure>
+                                        <details>
+
+                                        </details>
+                                    </header>
+                                    <figure class="op-tracker">
+                                        <!--scripts -->
+                                    </figure>
+                                    <p>
+                                        {{{this.body}}}
+                                    </p>
+                                </article>
+                            </body>
+                            </html>
+                        ]]>
+                    </content:encoded>
+                </item>
+            {{/each}}
+        </channel>
+</rss>
