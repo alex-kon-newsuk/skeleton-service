@@ -29,17 +29,17 @@ function replaceContent (body, placeholders, relatedContent) {
 function getRealAssetData(id, relatedContent) {
     var data = {};
     relatedContent.forEach(function(item){
-        if(item.id === id){
+        if(item.id.value === id){
             data.type = item.contentType;
             data.link = item.link;
-            data.id = item.id;
+            data.id = item.id.value;
         }
     });
     return data;
 }
 
 function extractAssetId(item){
-    var regex = /capiId=".*?(\")/g;
+    var regex = /capiid=".*?(\")/g;
     var string = item.match(regex);
     var lastIndex = string[0].length;
     return string[0].substring(8, lastIndex-1);
@@ -49,7 +49,7 @@ function replacePlaceholderWithLink(itemAssetData, body) {
     var newBody = body;
     switch(itemAssetData.type){
         case "IMAGE":
-            var placeholder = '<a class="capi-image" capiId="'+itemAssetData.id;
+            var placeholder = '<a class="capi-image" capiid="'+itemAssetData.id;
             var regex = new RegExp(placeholder+".*?(>)");
             newBody = body.replace(regex, '<img src="'+itemAssetData.link+'">');
             break;

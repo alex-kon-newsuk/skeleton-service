@@ -11,7 +11,7 @@ module.exports.getContentById = function (request, response, next, callback) {
     return new Promise(function (resolve, reject) {
 
         requestModule(basepath + '/content/' + version + '/' + request.params.id +
-                      '?format=json&includeRelated=true&html=full%2Cbody&api_key=' + apikey,
+                      '?includeRelated=true&html=full%2Cbody&api_key=' + apikey,
                         function (error, httpResponse, body) {
 
             resolve({
@@ -29,7 +29,7 @@ module.exports.getCollection = function (request, response, next, callback) {
      return new Promise(function (resolve, reject) {
 
          requestModule(basepath + '/content/' + version + '/collection/' + request.params.id +
-                       '?format=json&includeRelated=true&html=full%2Cbody&api_key=' + apikey,
+                       '?includeRelated=true&html=full%2Cbody&api_key=' + apikey,
                          function (error, httpResponse, body) {
              resolve({
                  body : body,
